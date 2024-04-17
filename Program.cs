@@ -100,16 +100,34 @@ class Program
         //}
 
         // Snack 8
-        int[] intNum = { 1, 2, 3, 4, 5, 6, 7, 8 };
-        int sumOdd = 0;
-        for(int i = 0; i < intNum.Length; i++)
+        //int[] intNum = { 1, 2, 3, 4, 5, 6, 7, 8 };
+        //int sumOdd = 0;
+        //for(int i = 0; i < intNum.Length; i++)
+        //{
+        //    if (i % 2 != 0)
+        //    {
+        //        sumOdd += intNum[i];
+        //    }
+        //}
+        //Console.WriteLine($"La somma dei numeri in posizioni dispari è: {sumOdd}");
+
+        // Snack 9
+        int[] numArray = new int[0];
+        int breakNum = 0;
+        Console.WriteLine("Inserisci numeri finchè la somma non è maggiore o uguale a 50");
+        while(breakNum < 50)
         {
-            if (i % 2 != 0)
-            {
-                sumOdd += intNum[i];
-            }
+            Console.WriteLine("Inserisci un numero");
+            int userNum = Convert.ToInt32(Console.ReadLine());
+            Array.Resize(ref numArray, numArray.Length + 1);
+            numArray[numArray.Length - 1] = userNum;
+            breakNum += userNum;
         }
-        Console.WriteLine($"La somma dei numeri in posizioni dispari è: {sumOdd}");
+        Console.WriteLine("La somma degli elementi è maggiore o uguale a 50: ");
+        foreach(int item in numArray)
+        {
+            Console.WriteLine(item);
+        }
     }
 }
 

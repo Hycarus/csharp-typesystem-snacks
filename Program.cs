@@ -82,22 +82,34 @@ class Program
         //}
 
         // Snack 7
-        int[] voidArray = new int[0];
-        for(int i = 0; i < 6; i++)
+        //int[] voidArray = new int[0];
+        //for(int i = 0; i < 6; i++)
+        //{
+        //    Console.WriteLine("Inserisci un numero");
+        //    int userNum = Convert.ToInt32(Console.ReadLine());
+        //    if(userNum % 2 != 0)
+        //    {
+        //        Array.Resize(ref voidArray, voidArray.Length + 1);
+        //        voidArray[voidArray.Length - 1] = userNum;
+        //    }
+        //}
+        //Console.WriteLine($"Ecco tutti i numeri dispari che hai inserito: ");
+        //foreach(int oddNum in voidArray)
+        //{
+        //    Console.WriteLine(oddNum);
+        //}
+
+        // Snack 8
+        int[] intNum = { 1, 2, 3, 4, 5, 6, 7, 8 };
+        int sumOdd = 0;
+        for(int i = 0; i < intNum.Length; i++)
         {
-            Console.WriteLine("Inserisci un numero");
-            int userNum = Convert.ToInt32(Console.ReadLine());
-            if(userNum % 2 != 0)
+            if (i % 2 != 0)
             {
-                Array.Resize(ref voidArray, voidArray.Length + 1);
-                voidArray[voidArray.Length - 1] = userNum;
+                sumOdd += intNum[i];
             }
         }
-        Console.WriteLine($"Ecco tutti i numeri dispari che hai inserito: ");
-        foreach(int oddNum in voidArray)
-        {
-            Console.WriteLine(oddNum);
-        }
+        Console.WriteLine($"La somma dei numeri in posizioni dispari è: {sumOdd}");
     }
 }
 

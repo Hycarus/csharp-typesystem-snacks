@@ -1,4 +1,8 @@
-﻿namespace csharp_typesystem_snacks;
+﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace csharp_typesystem_snacks;
+
+
 
 class Program
 {
@@ -25,11 +29,11 @@ class Program
         //string? word2 = Console.ReadLine();
         //if (word1?.Length > word2?.Length)
         //{
-        //    Console.WriteLine($"La parola più lunga è: {word1}");
+        //    Console.WriteLine($"La parola più lunga è: '{word1}', mentre quella più corta '{word2}'");
         //}
         //else
         //{
-        //    Console.WriteLine($"La parola più lunga è: {word2}");
+        //    Console.WriteLine($"La parola più lunga è: '{word2}', mentre quella più corta '{word1}'");
         //}
 
         //// Snack 3
@@ -65,19 +69,35 @@ class Program
         //}
 
         // Snack 6
+        //string[] invited = { "Luca", "Paolo", "Giovanni", "Marta", "Giada" };
+        //Console.WriteLine("Inserisci il tuo nome");
+        //string? you = Console.ReadLine();
+        //if (invited.Contains(you))
+        //{
+        //    Console.WriteLine("Benvenuto alla festa");
+        //}
+        //else
+        //{
+        //    Console.WriteLine("Il tuo nome non è sulla lista");
+        //}
 
-        string[] invited = { "Luca", "Paolo", "Giovanni", "Marta", "Giada" };
-        Console.WriteLine("Inserisci il tuo nome");
-        string? you = Console.ReadLine();
-        if (invited.Contains(you))
+        // Snack 7
+        int[] voidArray = new int[0];
+        for(int i = 0; i < 6; i++)
         {
-            Console.WriteLine("Benvenuto alla festa");
+            Console.WriteLine("Inserisci un numero");
+            int userNum = Convert.ToInt32(Console.ReadLine());
+            if(userNum % 2 != 0)
+            {
+                Array.Resize(ref voidArray, voidArray.Length + 1);
+                voidArray[voidArray.Length - 1] = userNum;
+            }
         }
-        else
+        Console.WriteLine($"Ecco tutti i numeri dispari che hai inserito: ");
+        foreach(int oddNum in voidArray)
         {
-            Console.WriteLine("Il tuo nome non è sulla lista");
+            Console.WriteLine(oddNum);
         }
-
     }
 }
 

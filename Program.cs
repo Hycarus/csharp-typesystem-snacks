@@ -18,7 +18,19 @@ class Program
             Console.WriteLine($"Il maggiore è: {num2}");
         }
 
-        
+        // Snack 2
+        Console.WriteLine("Inserisci una parola");
+        string word1 = Console.ReadLine();
+        Console.WriteLine("Inserisci un altra parola");
+        string word2 = Console.ReadLine();
+        if(word1.Length > word2.Length)
+        {
+            Console.WriteLine($"La parola più lunga è: {word1}");
+        }
+        else
+        {
+            Console.WriteLine($"La parola più lunga è: {word2}");
+        }
     }
 }
 

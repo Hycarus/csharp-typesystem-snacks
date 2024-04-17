@@ -53,16 +53,31 @@ class Program
         //Console.WriteLine($"La media dei numeri è: {sumArray / numArray.Length}");
 
         // Snack 5
-        Console.WriteLine("Inserisci un numero");
-        int numEven = Convert.ToInt32(Console.ReadLine());
-        if(numEven % 2 == 0)
+        //Console.WriteLine("Inserisci un numero");
+        //int numEven = Convert.ToInt32(Console.ReadLine());
+        //if(numEven % 2 == 0)
+        //{
+        //    Console.WriteLine($"Il tuo numero è pari: {numEven}");
+        //}
+        //else
+        //{
+        //    Console.WriteLine($"Il tuo numero è dispari, perciò ti faccio vedere quello successivo: {numEven + 1}");
+        //}
+
+        // Snack 6
+
+        string[] invited = { "Luca", "Paolo", "Giovanni", "Marta", "Giada" };
+        Console.WriteLine("Inserisci il tuo nome");
+        string? you = Console.ReadLine();
+        if (invited.Contains(you))
         {
-            Console.WriteLine($"Il tuo numero è pari: {numEven}");
+            Console.WriteLine("Benvenuto alla festa");
         }
         else
         {
-            Console.WriteLine($"Il tuo numero è dispari, perciò ti faccio vedere quello successivo: {numEven + 1}");
+            Console.WriteLine("Il tuo nome non è sulla lista");
         }
+
     }
 }
 
